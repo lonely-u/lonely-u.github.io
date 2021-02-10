@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="FPGA的基本结构">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/d:/Blog/pictures/kaifa.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210210234958364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVyVERE,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-02-10T13:52:34.000Z">
-<meta property="article:modified_time" content="2021-02-10T15:27:42.136Z">
+<meta property="article:modified_time" content="2021-02-10T15:51:48.378Z">
 <meta property="article:author" content="ͯ����">
 <meta property="article:tag" content="--FPGA --为着将来，替自己积存美好的根基作宝藏。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/d:/Blog/pictures/kaifa.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210210234958364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVyVERE,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,7 +187,7 @@
 <li>用于产生不同时钟频率的锁相环(PLL);</li>
 <li>高速串行收发器；</li>
 <li>片外存储器控制器；</li>
-<li>乘累加模块。<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><img src="/d:/Blog/pictures/kaifa.png"><br>[1]需求分析到模块划分<br>  模块划分的的基本原则是以功能为主，有时是按数据流来做划分。<br>[2]设计输入到综合优化<br>  设计输入可以是原理图输入、代码输入或者搭建SOPC平台。<br>  综合是将较高层次的电路描述转化为较低层次的电路描述。<br>  具体的说，就是将设计代码转化为底层的与门、非门、RAM、触发器等基本逻辑单元相互连接而成的网表<br>[3]实现到时序收敛<br>  分三步走，即翻译、映射和布局布线。<br>[4]仿真测试到板级调试<br>  1.信号探针(SignalProbe)法<br>  2.在线逻辑分析仪(SiganlTap II Embedded Logic Analyzer)法<br>  3.逻辑分析仪接口(Logic Analyzer Interface)法<br>  4.在线存储内容编辑(In-System Memory Content Editor)法<br>  5.在线源和探针(In-System Sources and Probes)法</li>
+<li>乘累加模块。<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><img src="https://img-blog.csdnimg.cn/20210210234958364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVyVERE,size_16,color_FFFFFF,t_70#pic_center"><br>[1]<strong>需求分析到模块划分</strong><br>  模块划分的的基本原则是以功能为主，有时是按数据流来做划分。<br>[2]<strong>设计输入到综合优化</strong><br>  设计输入可以是原理图输入、代码输入或者搭建SOPC平台。<br>  综合是将较高层次的电路描述转化为较低层次的电路描述。<br>  具体的说，就是将设计代码转化为底层的与门、非门、RAM、触发器等基本逻辑单元相互连接而成的网表<br>[3]<strong>实现到时序收敛</strong><br>  分三步走，即翻译、映射和布局布线。<br>[4]<strong>仿真测试到板级调试</strong><br>  1.信号探针(SignalProbe)法<br>  2.在线逻辑分析仪(SiganlTap II Embedded Logic Analyzer)法<br>  3.逻辑分析仪接口(Logic Analyzer Interface)法<br>  4.在线存储内容编辑(In-System Memory Content Editor)法<br>  5.在线源和探针(In-System Sources and Probes)法</li>
 </ul>
 
       
