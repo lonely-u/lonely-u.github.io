@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-FPGA管脚分配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/11/FPGA%E7%AE%A1%E8%84%9A%E5%88%86%E9%85%8D/">FPGA管脚分配</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/11/FPGA%E7%AE%A1%E8%84%9A%E5%88%86%E9%85%8D/" class="archive-article-date">
+  	<time datetime="2021-03-11T11:02:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://img-blog.csdnimg.cn/20210311190706166.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVyVERE,size_16,color_FFFFFF,t_70#pic_center"></p>
+<h2 id="FPGA管脚介绍"><a href="#FPGA管脚介绍" class="headerlink" title="FPGA管脚介绍"></a>FPGA管脚介绍</h2><p><strong>使用对象</strong></p>
+<pre><code>专用引脚  20%~30%
+用户自定义引脚 70%~80%
+</code></pre>
+<p><strong>功能划分</strong></p>
+<pre><code>电源管脚    三角形标记，正三角表示VCC,倒三角表示GND，三角内部的O表示I/O管脚电源，I表示内核电源。
+配置管脚    圆形标记，可以由用户随意引用
+时钟管脚    正方形标记且内部有时钟沿符号的管脚为全局时钟管脚
+普通I/O管脚   五边形标记
+</code></pre>
+<h3 id="电源管脚"><a href="#电源管脚" class="headerlink" title="电源管脚"></a>电源管脚</h3><pre><code>FPGA通常需要两个电压才能运行，一个时内核电压，另一个是I/O电压。每个电压通过独立的电源管脚来提供，内核电压是用来给FPGA内部的逻辑门和触发器供电。
+</code></pre>
+<p>随着FPGA的发展，内核电压从5V、3.3V、2.5V、1.8V、到1.5V，变得越来越低。I/O电压用来给各个Bank供电，每个Bank都有独立的I/O电压输入。一般情况下，内核<br>电压会比I/O电压低。</p>
+<h3 id="配置管脚"><a href="#配置管脚" class="headerlink" title="配置管脚"></a>配置管脚</h3><pre><code>每个FPGA都需要配置管脚，以支持多种配置方式，例如JTAG、从串、从并、主串、主并等。对于配置管脚的控制信号来说，是专用管脚，不能作为普通的I/O管脚，
+</code></pre>
+<p>而其数据可以作为普通的I/O管脚使用。</p>
+<h3 id="普通的I-O管脚"><a href="#普通的I-O管脚" class="headerlink" title="普通的I/O管脚"></a>普通的I/O管脚</h3><pre><code>FPGA的I/O管脚是FPGA上较为丰富的资源，也是做管脚约束时最常用的资源。对于FPGA的普通I/O管脚，可以设定电平类型(TTL、LVTTL、LVCOMS、ECL等)、驱动
+电源、摆率等参数。
+</code></pre>
+<h3 id="时钟管脚"><a href="#时钟管脚" class="headerlink" title="时钟管脚"></a>时钟管脚</h3><pre><code>FPGA内部的时钟都需要通过专用的时钟管脚连接内部的PLL或者DCM等专用时钟处理单元，从而接入内部高速时钟网络。对于一些外部同步信号的输入，如果时钟只用于采样当前的同步信号，其时钟可以不用连接到专用时钟管脚上，即不用接入全局时钟网络，但需要约束其管脚不使用全局时钟资源。否则，EDA工具会报错，提示其作为时钟输入而没有接在专用时钟管脚上。
+</code></pre>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/11/FPGA%E7%AE%A1%E8%84%9A%E5%88%86%E9%85%8D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-FPGA语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
